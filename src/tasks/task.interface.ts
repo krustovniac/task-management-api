@@ -1,4 +1,6 @@
-export type TaskStatus = 'pending' | 'in_progress' | 'completed';
+import { TaskStatus } from "./enums/task-status.enum";
+
+//export type TaskStatus = 'pending' | 'in_progress' | 'completed';
 export type TaskPriority = 'low' | 'medium' | 'high';
 
 

@@ -1,6 +1,7 @@
-import { IsEnum } from 'class-validator';
+import { IsEnum, IsIn } from 'class-validator';
+import { TaskStatus } from '../enums/task-status.enum';
 
 export class UpdateTaskStatusDto {
-  @IsEnum(['pending', 'in_progress', 'completed'])
-  status: 'pending' | 'in_progress' | 'completed';
+  @IsIn(Object.values(TaskStatus))
+  status: TaskStatus;
 }

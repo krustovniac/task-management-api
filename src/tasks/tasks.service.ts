@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { Task } from './task.interface';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { randomUUID } from 'crypto';
+import { TaskStatus } from './enums/task-status.enum';
 
 @Injectable()
 export class TasksService {
@@ -33,11 +34,11 @@ export class TasksService {
         });
     }
 
-    updateStatus(id: string, status: string): Task {
+    updateStatus(id: string, status: TaskStatus): Task {
         const task = this.tasks.find(t => t.id === id);
         if (!task) throw new NotFoundException('Tarea no encontrada');
 
-        task.status = status as any;
+        task.status = status;
         task.updatedAt = new Date();
         return task;
     }

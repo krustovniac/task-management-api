@@ -39,7 +39,11 @@ src/
  │   └─ users.module.ts
  ├─ tasks/
  │   ├─ dto/
- │   │   └─ create-task.dto.ts
+ │   │   ├─ create-task.dto.ts
+ │   │   └─ update-task-status.dto.ts
+ │   ├─ enums/
+ │   │   ├─ task-priority.enum.ts
+ │   │   └─ task-status.enum.ts
  │   ├─ task.interface.ts
  │   ├─ tasks.controller.ts
  │   ├─ tasks.service.ts
@@ -62,7 +66,7 @@ src/
 Clonar el repositorio:
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/krustovniac/task-management-api.git
 cd task-manager-api
 ```
 
@@ -198,5 +202,5 @@ DELETE /tasks/:id
 
 ## 👤 Autor
 
-Desarrollado como solución a desafío técnico backend con NestJS.
+Desarrollado como solución a desafío técnico backend con NestJS por Alan Ugarte
 
